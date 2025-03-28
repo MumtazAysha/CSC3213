@@ -1,0 +1,26 @@
+;write an assembly program to subtract two numbers and display the result.
+.model small
+.stack 100h
+
+.data
+m db 7
+n db 1
+
+.code 
+start:
+
+mov ax,@data
+
+mov ds,ax
+
+mov dl,m ;dl=7
+sub dl,n ;dl=7-1
+add dl,48 ;dl=6+48
+
+mov ah,02h
+int 21h
+
+mov ax,4c00h
+int 21h
+
+end start
